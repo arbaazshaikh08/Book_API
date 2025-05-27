@@ -1,0 +1,208 @@
+{
+  "info": {
+    "_postman_id": "83183668-43d2-4be8-93bd-49ecbe071bb4",
+    "name": "book",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38679063"
+  },
+  "item": [
+    {
+      "name": "publish-book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Delhi Diaries\",\r\n    \"author\": \"Aakash Mehta\",\r\n    \"price\": 300\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server}}/books/publish-book",
+          "host": ["{{server}}"],
+          "path": ["books", "publish-book"]
+        }
+      },
+      "response": [
+        {
+          "name": "Success 201 - Book Created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Delhi Diaries\",\r\n    \"author\": \"Aakash Mehta\",\r\n    \"price\": 300\r\n  }"
+            },
+            "url": {
+              "raw": "{{server}}/books/publish-book",
+              "host": ["{{server}}"],
+              "path": ["books", "publish-book"]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"statusCode\": 201,\n  \"data\": {\n    \"title\": \"Delhi Diaries\",\n    \"author\": \"Aakash Mehta\",\n    \"price\": 300,\n    \"_id\": \"683540ab7f9161ad3af4fe7b\",\n    \"publishedDate\": \"2025-05-27T04:33:47.003Z\",\n    \"createdAt\": \"2025-05-27T04:33:47.005Z\",\n    \"updatedAt\": \"2025-05-27T04:33:47.005Z\",\n    \"__v\": 0\n  },\n  \"message\": \"Book Publish successfully\",\n  \"success\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "getAll-book",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server}}/books/getAll-book",
+          "host": ["{{server}}"],
+          "path": ["books", "getAll-book"]
+        }
+      },
+      "response": [
+        {
+          "name": "Success 200 - All Books Fetched",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/books/getAll-book",
+              "host": ["{{server}}"],
+              "path": ["books", "getAll-book"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{...json response as above...}"
+        }
+      ]
+    },
+    {
+      "name": "update-book",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n    \"title\": \"The Himalayan Quest\",\r\n    \"author\": \"Anil Sharma\",\r\n    \"price\": 400\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{server}}/books/update-book/683540527f9161ad3af4fe6f",
+          "host": ["{{server}}"],
+          "path": ["books", "update-book", "683540527f9161ad3af4fe6f"]
+        }
+      },
+      "response": [
+        {
+          "name": "Success 200 - Book Updated",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"The Himalayan Quest\",\n  \"author\": \"Anil Sharma\",\n  \"price\": 400\n}"
+            },
+            "url": {
+              "raw": "{{server}}/books/update-book/683540527f9161ad3af4fe6f",
+              "host": ["{{server}}"],
+              "path": ["books", "update-book", "683540527f9161ad3af4fe6f"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"statusCode\": 200,\n  \"data\": {\n    \"_id\": \"683540527f9161ad3af4fe6f\",\n    \"title\": \"The Himalayan Quest\",\n    \"author\": \"Anil Sharma\",\n    \"price\": 400,\n    \"publishedDate\": \"2025-05-27T04:32:18.166Z\",\n    \"createdAt\": \"2025-05-27T04:32:18.184Z\",\n    \"updatedAt\": \"2025-05-27T05:03:58.833Z\",\n    \"__v\": 0\n  },\n  \"message\": \"Book updated successfully\",\n  \"success\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "delete-book",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Mumbai Nights\",\r\n  \"author\": \"Rohan Patil\",\r\n  \"price\": 320\r\n}"
+        },
+        "url": {
+          "raw": "{{server}}/books/delete-book/683540907f9161ad3af4fe77",
+          "host": ["{{server}}"],
+          "path": ["books", "delete-book", "683540907f9161ad3af4fe77"]
+        }
+      },
+      "response": [
+        {
+          "name": "Success 200 - Book Deleted",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{server}}/books/delete-book/683540907f9161ad3af4fe77",
+              "host": ["{{server}}"],
+              "path": ["books", "delete-book", "683540907f9161ad3af4fe77"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"statusCode\": 200,\n  \"data\": {\n    \"_id\": \"683540907f9161ad3af4fe77\",\n    \"title\": \"Mumbai Nights\",\n    \"author\": \"Rohan Patil\",\n    \"price\": 320,\n    \"publishedDate\": \"2025-05-27T04:33:20.524Z\",\n    \"createdAt\": \"2025-05-27T04:33:20.525Z\",\n    \"updatedAt\": \"2025-05-27T04:33:20.525Z\",\n    \"__v\": 0\n  },\n  \"message\": \"Book deleted successfully\",\n  \"success\": true\n}"
+        }
+      ]
+    }
+  ]
+}
